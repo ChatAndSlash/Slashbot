@@ -1,0 +1,98 @@
+{
+	"name": "slashbot",
+	"version": "0.1.0",
+	"description": "A virtual DM.",
+	"private": true,
+	"scripts": {
+		"lint": "eslint _app _content _mixins tests",
+		"validate": "npm ls",
+		"test": "make test",
+		"knex": "knex"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DanHulton/slashbot.git"
+	},
+	"author": "Dan Hulton",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/DanHulton/slashbot/issues"
+	},
+	"jest": {
+		"testRegex": "(/tests/.*|\\.(test|spec))\\.(js|jsx)$",
+		"testEnvironment": "node",
+		"verbose": false,
+		"setupFiles": [
+			"./globals",
+			"./testGlobals"
+		],
+		"moduleNameMapper": {
+			"^@root(.*)$": "<rootDir>/$1",
+			"^@app(.*)$": "<rootDir>/_app/$1",
+			"^@constants$": "<rootDir>/_app/constants.js",
+			"^@content(.*)$": "<rootDir>/_content/$1",
+			"^@mixins(.*)$": "<rootDir>/_mixins/$1",
+			"^@util(.*)$": "<rootDir>/_app/util/$1"
+		},
+		"setupFilesAfterEnv": [
+			"jest-expect-message"
+		]
+	},
+	"_moduleAliases": {
+		"@root": ".",
+		"@app": "./_app",
+		"@constants": "./_app/constants.js",
+		"@content": "./_content",
+		"@mixins": "./_mixins",
+		"@util": "./_app/util"
+	},
+	"homepage": "https://github.com/DanHulton/slashbot#readme",
+	"dependencies": {
+		"acorn": "6.4.1",
+		"ajv": "6.10.2",
+		"amqplib": "0.5.3",
+		"atob": ">=2.1.0",
+		"bunyan": "^1.8.12",
+		"bunyan-blackhole": "^1.1.1",
+		"debug": "4.1.1",
+		"dotenv": "8.0.0",
+		"eslint": "6.1.0",
+		"eslint-import-resolver-alias": "1.1.2",
+		"eslint-plugin-import": "2.18.2",
+		"git-rev-sync": "1.12.0",
+		"hashids": "1.2.2",
+		"hoek": "6.1.3",
+		"i18n": "0.8.3",
+		"knex": "0.19.5",
+		"lodash": "4.17.19",
+		"mailchimp-api-v3": "1.13.1",
+		"merge": ">=1.2.1",
+		"mixwith": "0.1.1",
+		"module-alias": "2.2.0",
+		"moment": "~2.24.0",
+		"mysql": "2.17.1",
+		"mysql2": "1.6.5",
+		"npm": "6.14.6",
+		"npm-check-updates": "3.1.20",
+		"number-to-words": "1.2.4",
+		"ordinal": "1.0.3",
+		"raven": "2.6.4",
+		"slacksimple": "0.11.2",
+		"sprintf-js": "1.1.2",
+		"sshpk": "1.16.1"
+	},
+	"devDependencies": {
+		"database-cleaner": "1.3.0",
+		"jest": "^24.8.0",
+		"jest-cli": "^24.8.0",
+		"jest-expect-message": "1.0.2",
+		"mockdate": "2.0.3",
+		"nodemon": "1.19.1",
+		"pre-commit": "1.2.2",
+		"precommit-hook-eslint": "3.0.0"
+	},
+	"pre-commit": [
+		"lint",
+		"test"
+	]
+}

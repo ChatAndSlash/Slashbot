@@ -1,0 +1,2 @@
+echo "Cannot commit.  Slacksimple is symlinked in dev mode!"
+exit 1

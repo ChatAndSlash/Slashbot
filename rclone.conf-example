@@ -1,0 +1,11 @@
+[s3-images]
+type = s3
+env_auth = false
+access_key_id = XXX
+secret_access_key = XXXX
+region =
+endpoint =
+location_constraint =
+acl = public-read
+server_side_encryption =
+

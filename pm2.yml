@@ -1,0 +1,6 @@
+---
+  - script: /var/local/Slashbot/index.js
+    name: 'slashbot'
+    merge_logs: true
+    out_file: '/var/log/slashbot.log'
+    error_file: '/var/log/slashbot.log'
